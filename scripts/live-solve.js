@@ -2,9 +2,11 @@ $(onReady);
 
 var currentPersonIndex = 0;
 
-function onReady(){
+function onReady() {
   setCurrentShoutOut(currentPersonIndex);
-  $('#nextButton').on('click', function(){
+
+  // start of nextButton
+  $('#nextButton').on('click', function() {
     // increment currentPersonIndex by one to go to next person
     currentPersonIndex++;
     // detect if end of array reached
@@ -12,24 +14,24 @@ function onReady(){
     if (currentPersonIndex >= peopleArray.length) {
       currentPersonIndex = 0;
     }
-
-
     // set current shout out with new index
     setCurrentShoutOut(currentPersonIndex);
-  });
-  $('#previousButton').on('click', function(){
+  }); // end of nextButton
+
+  // start of previousButton
+  $('#previousButton').on('click', function() {
     // detect if end of array reached
     // go back to begining if end or array reached
     if (currentPersonIndex <= 0) {
       currentPersonIndex = peopleArray.length;
     }
-    // increment currentPersonIndex by one to go to next person
+    // decrement currentPersonIndex by one to go to previous person
     currentPersonIndex--;
     // set current shout out with new index
     setCurrentShoutOut(currentPersonIndex);
-  });
+  }); // end of previousButton
 }
 
-function setCurrentShoutOut (currentIndex){
+function setCurrentShoutOut(currentIndex) {
   console.log(peopleArray[currentIndex]);
 }
