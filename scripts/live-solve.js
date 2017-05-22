@@ -37,8 +37,11 @@ function setCurrentShoutOut(currentIndex) {
   console.log(currentPerson);
   $shoutLine = $('<p></p>');
   $shoutLine.append(currentPerson.name);
+  $shoutLine.append(': ');
+  $shoutLine.append(currentPerson.weirdThing);
+
   $('.container').empty();
   $('.container').html($shoutLine);
-  // $('.container').append('<p>' + currentPerson.weirdThing + '</p>');
-  // $('.container').append('<p>' + (currentIndex + 1) + '/' + peopleArray.length + '</p>');
+
+  $('.container').append('<p>' + (currentIndex + 1) + '/' + peopleArray.length + '</p>');
 }
