@@ -38,4 +38,5 @@ function setCurrentShoutOut(currentIndex) {
   $('.container').empty();
   $('.container').html('<p>' + currentPerson.name + '</p>');
   $('.container').append('<p>' + currentPerson.weirdThing + '</p>');
+  $('.container').append('<p>' + (currentIndex + 1) + '/' + peopleArray.length + '</p>');
 }
