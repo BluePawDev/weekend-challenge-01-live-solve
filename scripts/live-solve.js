@@ -30,6 +30,12 @@ function onReady() {
     // set current shout out with new index
     setCurrentShoutOut(currentPersonIndex);
   }); // end of previousButton
+
+  $('.container').on('click', '.orderButton', function() {
+    console.log('order button was clicked!');
+    $('.container').append('<p>' + (currentPersonIndex + 1) + '/' + peopleArray.length + '</p>');
+    $(this).remove();
+  });
 }
 
 function setCurrentShoutOut(currentIndex) {
@@ -42,6 +48,7 @@ function setCurrentShoutOut(currentIndex) {
 
   $('.container').empty();
   $('.container').html($shoutLine);
+  $('.container').append('<button class="orderButton">Click to show order</button>');
 
-  $('.container').append('<p>' + (currentIndex + 1) + '/' + peopleArray.length + '</p>');
+
 }
