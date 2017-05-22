@@ -35,8 +35,10 @@ function onReady() {
 function setCurrentShoutOut(currentIndex) {
   var currentPerson = peopleArray[currentIndex];
   console.log(currentPerson);
+  $shoutLine = $('<p></p>');
+  $shoutLine.append(currentPerson.name);
   $('.container').empty();
-  $('.container').html('<p>' + currentPerson.name + '</p>');
-  $('.container').append('<p>' + currentPerson.weirdThing + '</p>');
-  $('.container').append('<p>' + (currentIndex + 1) + '/' + peopleArray.length + '</p>');
+  $('.container').html($shoutLine);
+  // $('.container').append('<p>' + currentPerson.weirdThing + '</p>');
+  // $('.container').append('<p>' + (currentIndex + 1) + '/' + peopleArray.length + '</p>');
 }
